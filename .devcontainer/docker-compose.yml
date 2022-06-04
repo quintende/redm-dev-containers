@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: ubuntu-22.04
+
+    volumes:
+      - ..:/workspace:cached
+    
+    # Seems like part 30120 already is being used when creating the container, which causes the build process to fail.
+    # As an alternative to the default 30120, another port can be configured. In out case 30125 has been chosen.
+    # This port needs to be configured in server.cfg "endpoint_add_tcp" and "endpoint_add_udp" fields 
+    ports:
+      - "30110:30110/udp"
+      - "30125:30125/tcp"
+      - "30124:30125/udp"
+      - "30130:30130/udp"
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+
+  db:
+    image: mariadb:10.4
+    restart: unless-stopped
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb
+      MYSQL_DATABASE: mariadb
+      MYSQL_USER: mariadb
+      MYSQL_PASSWORD: mariadb
+  
+volumes:
+  mariadb-data:
