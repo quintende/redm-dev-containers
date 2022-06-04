@@ -32,7 +32,7 @@ endpoint_add_udp "0.0.0.0:30125"
 
 It seems that GitHub Virtual Codespaces does not support forwarding UDP ports out of codespaces. This is why we'll use the **Remote UDP Tunnel** extension to forward our UDP ports. This extension comes pre-installed with the devcontainer. A port can be forwarded by running the `Remote UDP Tunnel: Forward a Port` command, which can be accessed via the **Command Palette**. 
 
-Press <kbd>F1</kbd><sup> 1<sup> and run `Remote UDP Tunnel: Forward a Port`, which in turn will give a prompt where you can fill the `30125` port in.
+Press <kbd>F1</kbd><sup> 1</sup> and run `Remote UDP Tunnel: Forward a Port`, which in turn will give a prompt where you can fill the `30125` port in.
 
 [1] Command Palette can also be accessed via **<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>** on *Windows* and **<kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>** on *Mac*.
 
