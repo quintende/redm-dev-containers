@@ -2,7 +2,7 @@
 
 ## Summary
 
-*An Ubuntu container configured for RedM linux development based on the [Microsoft Ubuntu devcontainer](https://github.com/microsoft/vscode-dev-containers/tree/main/containers/ubuntu).*
+*An Ubuntu container configured for RedM Linux development. This devcontainer is based on the [Microsoft Ubuntu devcontainer](https://github.com/microsoft/vscode-dev-containers/tree/main/containers/ubuntu).*
 
 | Metadata | Value |  
 |----------|-------|
@@ -16,9 +16,9 @@
 
 ## Important Notes
 
-This repository / devcontainer only provides the CFX server and resource files. It does not contain a preconfigured, ready and bootstrapped game server. For set-up and configuration please refer to the [official documentation can be used](https://docs.fivem.net/docs/server-manual/setting-up-a-server-vanilla/#linux).
+This devcontainer only provides the CFX server and resource files. It does not contain a pre-configured and ready game server. For set-up and configuration please refer to the [official documentation](https://docs.fivem.net/docs/server-manual/setting-up-a-server-vanilla/#linux).
 
-Do note that some configuration needs to be changed from the default settings in order for it to work with GitHub Codespaces. These are as followed:
+**Do note** that some configuration needs to be changed from the defaults in order for it to work with GitHub Codespaces. These are as followed:
 
 ### Configuring endpoints in server.cfg
 
@@ -30,15 +30,15 @@ endpoint_add_udp "0.0.0.0:30125"
 ```
 ### Tunneling 
 
-It seems that GitHub Virtual Codespaces does not support forwarding UDP ports out of codespaces. This is why we'll use the **Remote UDP Tunnel** extension to forward our UDP ports. This extension comes pre-installed with the devcontainer. A port can be forwarded via the `Remote UDP Tunnel: Forward a Port` command, which can be accessed via the **Command Palette**. 
+It seems that GitHub Virtual Codespaces does not support forwarding UDP ports out of codespaces. This is why we'll use the **Remote UDP Tunnel** extension to forward our UDP ports. This extension comes pre-installed with the devcontainer. A port can be forwarded by running the `Remote UDP Tunnel: Forward a Port` command, which can be accessed via the **Command Palette**. 
 
 Press <kbd>F1</kbd><sup> 1<sup> and run `Remote UDP Tunnel: Forward a Port`, which in turn will give a prompt where you can fill the `30125` port in.
 
-[1] Command Palette can also be acces via **<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>** on *Windows* and **<kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>** on *Mac*.
+[1] Command Palette can also be accessed via **<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>** on *Windows* and **<kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>** on *Mac*.
 
 ### Connecting the the development server
 
-When you have configured your server correctly and added previous additional configurations you should be able to connect in-game to the server by pressing <kbd>F8</kbd> and connecting to your server by running `connect 127.0.0.1:30125`.
+When you have configured your server correctly and the additional configurations (as mentioned above) you should be able to connect in-game to the server by pressing <kbd>F8</kbd> and running `connect 127.0.0.1:30125`.
 
 ## Using this definition
 
