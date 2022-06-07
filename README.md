@@ -36,7 +36,7 @@ Press <kbd>F1</kbd><sup> 1</sup> and run `Remote UDP Tunnel: Forward a Port`, wh
 
 [1] Command Palette can also be accessed via **<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>** on *Windows* and **<kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>** on *Mac*.
 
-### Connecting the the development server
+### Connecting to the development server
 
 When you have configured your server correctly and the additional configurations (as mentioned above) you should be able to connect in-game to the server by pressing <kbd>F8</kbd> and running `connect 127.0.0.1:30125`.
 
@@ -56,7 +56,7 @@ These can be changed by updating the values `VARIANT`, `SERVER_VERSION`, `RESOUR
  }
 ```
 
-Besides the main Ubuntu container a MariaDb Container has also be configured, which can be accesed via:
+Besides the main Ubuntu container a MariaDb Container has also been configured, which can be accessed via:
 
 ```bash
 mariadb -umariadb -pmariadb -h db
@@ -69,18 +69,13 @@ The Ubuntu container also includes `git`, `node:12`, pre-installed VS Code exten
 
 1. If this is your first time using a development container, please see getting started information on [setting up](https://aka.ms/vscode-remote/containers/getting-started) Remote-Containers or [creating a codespace](https://aka.ms/ghcs-open-codespace) using GitHub Codespaces.
 
-2. To use the pre-built image:
-   1. Start VS Code and open your project folder or connect to a codespace.
-   2. Press <kbd>F1</kbd> select and **Add Development Container Configuration Files...** command for **Remote-Containers** or **Codespaces**.
-   4. Select this definition. You may also need to select **Show All Definitions...** for it to appear.
-
-3. To build a custom version of the image instead:
+3. Build with this custom version of the image instead:
    1. Clone this repository locally.
    2. Start VS Code and open your project folder or connect to a codespace.
    3. Use your local operating system's file explorer to drag-and-drop the locally cloned copy of the `.devcontainer` folder for this definition into the VS Code file explorer for your opened project or codespace.
    4. Update `.devcontainer/devcontainer.json` to reference `"dockerfile": "base.Dockerfile"`.
 
-4. After following step 2 or 3, the contents of the `.devcontainer` folder in your project can be adapted to meet your needs.
+4. After following step 2, the contents of the `.devcontainer` folder in your project can be adapted to meet your needs.
 
 5. Finally, press <kbd>F1</kbd> and run **Remote-Containers: Reopen Folder in Container** or **Codespaces: Rebuild Container** to start using the definition.
 
